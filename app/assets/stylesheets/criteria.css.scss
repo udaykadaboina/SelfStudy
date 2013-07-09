@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.answer {
-	border: 1px;
+@mixin rounded-corners($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
 }
+.answer {
+  border: solid 1px #777;
+  margin: 20px 0;
+  padding: 7px 12px;
+  @include rounded-corners(3px);
+  width: 700px;
+  height: 250px;
+ }
+

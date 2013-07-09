@@ -4,10 +4,12 @@
   <ol>  
     <% @criteria.each do |criterion| %>
     <li>
-      <b><%= criterion.title %></b><br>
+      <b><%= criterion.title %></b><br><br>
       <% criterion.subcriteria.each do |subcriterion| %>
       <%= h(subcriterion.title) %>
-      <p><%= h(subcriterion.narrative) %> </p>
+      <p class="answer">
+        <%= best_in_place subcriterion, :narrative %>
+      </p>
       <% end %>
       <% end %>      
     </li>
