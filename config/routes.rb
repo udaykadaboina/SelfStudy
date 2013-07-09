@@ -9,7 +9,9 @@ SelfStudy::Application.routes.draw do
   resources :subcriteria
 
 
-  resources :criteria
+  resources :criteria do
+    resources :subcriteria
+  end
 
 
   # The priority is based upon order of creation:

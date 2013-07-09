@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :criterion_id %><br />
-    <%= f.number_field :criterion_id %>
+    <%= f.collection_select :criterion_id, Criterion.all, :id, :title %>
   </div>
   <div class="actions">
     <%= f.submit %>

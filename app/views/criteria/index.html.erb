@@ -1,24 +1,22 @@
-<h1>Listing criteria</h1>
+<h1>UNM APR Self-Study</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Program</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @criteria.each do |criterion| %>
-  <tr>
-    <td><%= criterion.title %></td>
-    <td><%= criterion.program_id %></td>
-    <td><%= link_to 'Show', criterion %></td>
-    <td><%= link_to 'Edit', edit_criterion_path(criterion) %></td>
-    <td><%= link_to 'Destroy', criterion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <ol>  
+    <% @criteria.each do |criterion| %>
+    <li>
+      <b><%= criterion.title %></b><br>
+      <% criterion.subcriteria.each do |subcriterion| %>
+      <%= h(subcriterion.title) %>
+      <p><%= h(subcriterion.narrative) %> </p>
+      <% end %>
+      <% end %>      
+    </li>
+  </ol>
+
+<!-- <h4>Questions</h4> -->
+
+</div>
+<!-- </table> -->
 
 <br />
 
