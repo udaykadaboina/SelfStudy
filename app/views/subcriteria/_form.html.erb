@@ -1,0 +1,33 @@
+<%= form_for(@subcriterion) do |f| %>
+  <% if @subcriterion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subcriterion.errors.count, "error") %> prohibited this subcriterion from being saved:</h2>
+
+      <ul>
+      <% @subcriterion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :narrative %><br />
+    <%= f.text_field :narrative %>
+  </div>
+  <div class="field">
+    <%= f.label :attachment %><br />
+    <%= f.text_field :attachment %>
+  </div>
+  <div class="field">
+    <%= f.label :criterion_id %><br />
+    <%= f.number_field :criterion_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

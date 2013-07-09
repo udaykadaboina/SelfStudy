@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @subcriterion.title %>
+</p>
+
+<p>
+  <b>Narrative:</b>
+  <%= @subcriterion.narrative %>
+</p>
+
+<p>
+  <b>Attachment:</b>
+  <%= @subcriterion.attachment %>
+</p>
+
+<p>
+  <b>Criterion:</b>
+  <%= @subcriterion.criterion_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_subcriterion_path(@subcriterion) %> |
+<%= link_to 'Back', subcriteria_path %>

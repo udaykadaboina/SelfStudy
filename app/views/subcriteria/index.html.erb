@@ -1,0 +1,29 @@
+<h1>Listing subcriteria</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Narrative</th>
+    <th>Attachment</th>
+    <th>Criterion</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @subcriteria.each do |subcriterion| %>
+  <tr>
+    <td><%= subcriterion.title %></td>
+    <td><%= subcriterion.narrative %></td>
+    <td><%= subcriterion.attachment %></td>
+    <td><%= subcriterion.criterion_id %></td>
+    <td><%= link_to 'Show', subcriterion %></td>
+    <td><%= link_to 'Edit', edit_subcriterion_path(subcriterion) %></td>
+    <td><%= link_to 'Destroy', subcriterion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Subcriterion', new_subcriterion_path %>
