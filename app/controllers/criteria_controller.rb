@@ -7,6 +7,13 @@ class CriteriaController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @criteria }
+      format.pdf do
+        pdf = ReportPdf.new(@criteria)
+        
+        send_data pdf.render, filename: "Report.pdf",
+                              type: "application/pdf",
+                              disposition: "inline"
+      end 
     end
   end
 
