@@ -7,17 +7,48 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="user_nav">
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-  <% end %>
-</div>
+    <div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
+    <ul class="nav">
+  
+    <%= link_to 'UNM Academic Program Review', pages_home_path, :class => "brand" %>
+    
+    <li <% if current_page?(pages_home_path) -%>class="active"<% end -%>>
+        <%= link_to 'Home', pages_home_path %>
+    </li>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+    <li <% if current_page?(pages_about_path) -%>class="active"<% end -%>>
+         <%= link_to 'About', pages_about_path %>
+    </li>
+
+ </ul>
+
+    <ul class="nav pull-right">
+      <li>
+        <div id="user_nav">
+          <% if user_signed_in? %>
+  
+           Signed in as <%= link_to "#{current_user.email}", edit_user_registration_path %>
+           <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => 'btn btn-danger btn-mini' %>
+           <% else %>
+           <%= link_to new_user_registration_path do %>
+            <button class="btn-mini btn btn-info">Sign Up</button>
+            <% end %>
+            or <%= link_to new_user_session_path do %>
+             <button class="btn btn-info btn-mini">Sign In</button>
+            <% end %>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+
+</ul>
+</div>
+</div>
+</div> 
+
+
 
 <%= yield %>
 

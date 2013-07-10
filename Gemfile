@@ -8,6 +8,8 @@ gem 'rails', '3.2.13'
 group :production do
 	gem 'pg'
 end
+gem "therubyracer"
+gem "less-rails"
 
 group :development, :test do
 	gem 'sqlite3'
@@ -21,7 +23,7 @@ gem 'best_in_place'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem 'twitter-bootstrap-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 

@@ -1,3 +1,4 @@
+<div class="container">
 <h1>UNM APR Self-Study</h1>
 
 
@@ -8,7 +9,7 @@
       <% criterion.subcriteria.each do |subcriterion| %>
       <%= h(subcriterion.title) %>
       <p class="answer">
-        <%= best_in_place subcriterion, :narrative %>
+        <%= best_in_place subcriterion, :narrative, :type => :input %>
       </p>
       <% end %>
       <% end %>      
@@ -24,3 +25,4 @@
 
 <%= link_to 'New Criterion', new_criterion_path %>
 <p><%= link_to "Printable Report (PDF)", criteria_path(format: "pdf") %></p>
+</div>
