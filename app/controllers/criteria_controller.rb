@@ -10,7 +10,7 @@ class CriteriaController < ApplicationController
       format.pdf do
         pdf = ReportPdf.new(@criteria)
         
-        send_data pdf.render, filename: "Report.pdf",
+        send_data pdf.render, filename: "Self-Study Report.pdf",
                               type: "application/pdf",
                               disposition: "inline"
       end 

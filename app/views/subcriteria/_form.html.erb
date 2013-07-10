@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_for(@subcriterion) do |f| %>
   <% if @subcriterion.errors.any? %>
     <div id="error_explanation">
@@ -12,22 +13,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :narrative %><br />
+    <%= f.label :narrative %>
     <%= f.text_field :narrative %>
   </div>
   <div class="field">
-    <%= f.label :attachment %><br />
+    <%= f.label :attachment %>
     <%= f.text_field :attachment %>
   </div>
   <div class="field">
-    <%= f.label :criterion_id %><br />
+    <%= f.label :criterion_id %>
     <%= f.collection_select :criterion_id, Criterion.all, :id, :title %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+</div>
