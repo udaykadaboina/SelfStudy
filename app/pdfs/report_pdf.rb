@@ -2,8 +2,12 @@ class ReportPdf < Prawn::Document
 	def initialize(criteria)
 		super()
 		@criteria = criteria
-		text "UNM Academic Program Review, last revised: #{Time.now}", size: 16, style: :bold
-		stroke_horizontal_rule
+		text_box "UNM Academic Program Review" , size: 25, style: :bold, :align => :center, :at => [50, cursor-65]
+		text_box "Univsersity of New Mexico", size: 20, :align => :center, :at => [50, cursor-95]
+	#	show_homepage(:top_margin => 300)
+
+		#stroke_horizontal_rule
+		start_new_page(:margin => [50, 50, 50, 50])
 		move_down 25
 		show_subcriteria
 	end
@@ -25,5 +29,11 @@ class ReportPdf < Prawn::Document
 		end
 	end
 
+	def show_homepage(margin)
+		move_down(margin)
+		text "UNM Academic Program Review" , size: 25, style: :bold, :align => :center #, :vposition => 100
+		text "Univsersity of New Mexico", size: 20, :align => :center
+		
+	end
 
 end

@@ -8,6 +8,7 @@ gem 'rails', '3.2.13'
 group :production do
 	gem 'pg'
 end
+gem 'thin'
 gem "therubyracer"
 gem "less-rails"
 
