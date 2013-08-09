@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130709210025) do
+ActiveRecord::Schema.define(:version => 20130809204650) do
 
   create_table "criteria", :force => true do |t|
     t.string   "title"
@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(:version => 20130709210025) do
   end
 
   create_table "subcriteria", :force => true do |t|
-    t.string   "title"
+    t.text     "title",        :limit => 255
     t.string   "narrative"
     t.string   "attachment"
     t.integer  "criterion_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "users", :force => true do |t|
