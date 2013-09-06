@@ -2,4 +2,20 @@
 	<h1>UNM Academic Program Review</h1>
 	Welcome to UNM APR website, You need to fill out the Self-Study report.
 	<h2><%= link_to 'Self-Study', criteria_path %></h2>
+	
+	<table class="table span8" >
+		<tr>
+			<th>Criteria</th>
+			<th>Status</th>
+		</tr>
+		
+		<ol>
+		  <% @criteria.each do |criterion| %>
+	    <tr>
+	    	<td><li><b><%= criterion.title %></b><br></td></li>
+	    	<td></td>
+	    </tr>
+	    <% end %>
+  	</ol>
+  </table>
 </div>
