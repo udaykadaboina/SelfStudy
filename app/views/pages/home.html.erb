@@ -9,23 +9,20 @@
 			<th>Status</th>
 		</tr>
 		
-		<ol>
-		  <% @criteria.each do |criterion| %>
-	    <tr>
-	    	<td><li><b><%= criterion.title %></b><br></td></li>
-	    	<!-- <td><%= criterion.subcriteria.count %></td> -->
-	    	<% criterion.subcriteria.each do |subcriterion|%>
-	    	<td>
-	    		<!--<%# if subcriterion.narrative == /^$/ %>-->
-	    		<% if subcriterion.narrative == NIL %>
-		    		<%= "N" %>
-	    		<% else %>
-		    		<%= "Y" %>
-	    		<% end %>
-	   		</td>
-	   		<% end %>
-	    </tr>
-	    <% end %>
-  	</ol>
+		<% @criteria.each do |criterion| %>
+    <tr>
+    	<td><b><%= criterion.title %></b><br></td>
+    	<% criterion.subcriteria.each do |subcriterion|%>
+    	<td>
+    		<% if subcriterion.narrative == NIL %>
+	    		<%= "N" %>
+    		<% else %>
+	    		<%= "Y" %>
+    		<% end %>
+   		</td>
+   		<% end %>
+    </tr>
+    <% end %>
+  	
   </table>
 </div>
