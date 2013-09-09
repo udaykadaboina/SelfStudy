@@ -13,7 +13,17 @@
 		  <% @criteria.each do |criterion| %>
 	    <tr>
 	    	<td><li><b><%= criterion.title %></b><br></td></li>
-	    	<td></td>
+	    	<!-- <td><%= criterion.subcriteria.count %></td> -->
+	    	<% criterion.subcriteria.each do |subcriterion|%>
+	    	<td>
+	    		<!--<%# if subcriterion.narrative == /^$/ %>-->
+	    		<% if subcriterion.narrative == NIL %>
+		    		<%= "N" %>
+	    		<% else %>
+		    		<%= "Y" %>
+	    		<% end %>
+	   		</td>
+	   		<% end %>
 	    </tr>
 	    <% end %>
   	</ol>
